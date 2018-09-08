@@ -1,6 +1,6 @@
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const path = require('path');
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const path = require('path')
 
 var config = {
   output: {
@@ -12,46 +12,46 @@ var config = {
         test: /\.js$/,
         loader: 'babel',
         include: __dirname,
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.vue$/,
-        loader: 'vue'
+        loader: 'vue',
       },
       {
         test: /\.css$/,
-        loader: 'style!less!css'
-      }
-    ]
+        loader: 'style!less!css',
+      },
+    ],
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin( {
-      minimize : true,
-      sourceMap : false,
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      sourceMap: false,
       mangle: true,
       compress: {
-        warnings: false
-      }
-    })
-  ]
-};
+        warnings: false,
+      },
+    }),
+  ],
+}
 
 module.exports = [
   merge(config, {
     entry: path.resolve(__dirname + '/src/plugin.js'),
     output: {
-      filename: 'vuetify-upload-button.min.js',
+      filename: 'v-file.min.js',
       libraryTarget: 'window',
-      library: 'VuetifyUploadButton',
-    }
+      library: 'VFile',
+    },
   }),
   merge(config, {
-    entry: path.resolve(__dirname + '/src/UploadButton.vue'),
+    entry: path.resolve(__dirname + '/src/VFile.vue'),
     output: {
-      filename: 'vuetify-upload-button.js',
+      filename: 'v-file.js',
       libraryTarget: 'umd',
-      library: 'vuetify-upload-button',
-      umdNamedDefine: true
-    }
-  })
-];
+      library: 'v-file',
+      umdNamedDefine: true,
+    },
+  }),
+]

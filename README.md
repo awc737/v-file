@@ -1,37 +1,35 @@
-# vuetify-upload-button
+# v-file
 
-A Vue component for Vuetify.
-
-This component is a file upload input with the base functionality of a Vuetify button.
+A Vue.js wrapper component for file uploading via button. (Vuetify friendly)
 
 ## Installation
 
 ```js
-npm i vuetify-upload-button
+npm i v-file
 ```
 
 ### Browser
 
-Include the script file, then install the component with `Vue.use(UploadButton);` e.g.:
+Include the script file, then install the component with `Vue.use(VFile);` e.g.:
 
 ```html
 <script type="text/javascript" src="node_modules/vuejs/dist/vue.min.js"></script>
-<script type="text/javascript" src="node_modules/vuetify-upload-button/dist/upload-button.min.js"></script>
+<script type="text/javascript" src="node_modules/v-file/dist/v-file.min.js"></script>
 <script type="text/javascript">
-  Vue.use(UploadButton);
+  Vue.use(VFile);
 </script>
 ```
 
 ### Module
 
 ```js
-  import UploadButton from 'vuetify-upload-button';
+import VFile from '@outluch/v-file'
 
-  export default {
-    components: {
-      'upload-btn': UploadButton
-    }
-  }
+export default {
+  components: {
+    'v-file': VFile,
+  },
+}
 ```
 
 ## Usage
@@ -39,48 +37,29 @@ Include the script file, then install the component with `Vue.use(UploadButton);
 Once installed, it can be used in a template as simply as:
 
 Simple Upload button
+
 ```html
-<upload-btn></upload-btn>
+<v-file @change="onChange">
+  <v-btn>Upload</v-btn>
+</v-file>
 ```
 
 Button with icon
-```html
-<upload-btn>
-  <template slot="icon">
-    <v-icon>add</v-icon>
-  </template>
-</upload-btn>
-```
 
-Button as icon
 ```html
-<upload-btn icon>
-  <template slot="icon">
-    <v-icon>add</v-icon>
-  </template>
-</upload-btn>
+<v-file>
+  <v-btn icon>
+    <v-icon>cloud_upload</v-icon>
+  </v-btn>
+</v-file>
 ```
 
 ## Props
 
 You can use the following props
 
-| Name          | Description   | Type  | Default |
-| ------------- |---------------| -----:| -----:|
-| accept        | HTML input accept attribute | string | * |
-| block         | block         | bool  | false |
-| fileChangedCallback | callback for when a file is selected, returns a File object | function | undefined |
-| color | vuetify color, e.g. 'primary' | string | 'primary' |
-| disabled | sets disabled property for input/button | bool | false |
-| flat | sets button flat | bool | false |
-| hover | button has hoverable effect | bool | true |
-| icon | button is icon button | bool | false |
-| large | button is large | bool | false |
-| loading | loading state for button | bool | false |
-| name | applies HTML name attribute | string | uploadFile |
-| outline | button is outline | bool | false |
-| ripple | button has ripple effect | bool | true |
-| round | button is round | bool | false |
-| small | button is small | bool | false |
-| title | text of button | string | 'Upload' |
-
+| Name     | Description                 |    Type | Default |
+| -------- | --------------------------- | ------: | ------: |
+| accept   | HTML input accept attribute |  String |      \* |
+| name     | applies HTML name attribute |  String |    file |
+| multiple | multiple files selection    | Boolean |   false |

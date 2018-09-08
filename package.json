@@ -1,23 +1,24 @@
 {
-  "name": "vuetify-upload-button",
-  "version": "1.1.0",
-  "description": "A Vue.js component for showing a Vuetify input/button for file uploading.",
-  "main": "dist/vuetify-upload-button.js",
+  "name": "@outluch/v-file",
+  "version": "1.0.0",
+  "description": "A Vue.js wrapper component for file uploading.",
+  "main": "dist/v-file.js",
   "scripts": {
     "build": "rimraf ./dist && webpack --mode production"
   },
-  "author": "Michael White",
+  "author": "outluch",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/doritobandito/vuetify-upload-button"
+    "url": "git+https://github.com/outluch/v-file"
   },
   "keywords": [
     "vue",
     "vuejs",
     "vuetify",
     "vuetifyjs",
-    "upload"
+    "upload",
+    "file"
   ],
   "devDependencies": {
     "babel-core": "^6.10.4",

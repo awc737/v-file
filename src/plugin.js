@@ -1,7 +1,7 @@
-import UploadButton from './UploadButton.vue';
+import VFile from './VFile.vue'
 
 module.exports = {
-  install: function (Vue, options) {
-    Vue.component('upload-btn', UploadButton);
-  }
-};
+  install: function(Vue, options) {
+    Vue.component('v-file', VFile)
+  },
+}
